@@ -30,7 +30,7 @@ SELECT name FROM tracks WHERE id IN (SELECT track_id FROM playlists_tracks WHERE
 genre_id = Genre.where(name: 'Hip Hop/Rap')
 Track.where(genre_id: genre_id).count
 
-=> 30
+=> 35
 
 2.Find the most expensive Track that has the MediaType "MPEG audio file".
 
@@ -43,7 +43,7 @@ Artist.order("created_at ASC").limit(2)
 
 4.Find all the Tracks that belong to the 2 most recent Playlist.
 
-ids = Playlist.order("created_at DESC").limit(2)
+ids = Playlist.order("updated_at DESC").limit(2)
 Track.where(id: ids)
 
 
